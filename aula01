@@ -1,0 +1,25 @@
+1) let visto = false;
+2)5 ===5
+"5" === 5
+true === false
+3)document.querySelectorAll(".apoiar").forEach(function(botao) {
+  let apoiado = false; // Cada botão passa a ter seu próprio estado
+  botao.addEventListener("click", function() {
+    // ...
+  });
+});
+4)if (apoiado === false) {
+  botao.textContent = "Apoiado";
+} else {
+  botao.textContent = "Apoiar";
+}
+5)<div class="cartao">
+  <h3>Falta de bebedouros no pátio</h3>
+  <p>Os alunos precisam andar até o outro bloco para conseguir água.</p>
+  <span class="contagem">0</span>
+  <button class="apoiar">Apoiar</button>
+</div>
+6)é só inicializar a variavel de controle desse cartão específico como true (let apoiado = true;)
+se você definir apoiado = true pra todos os cartões no JavaScript, os cartões que começam desapoiados no HTML 
+vão se comportar de forma invertida no primeiro clique
+Em vez de fixar true ou false no código, o JavaScript deve checar o estado inicial direto do HTML.
