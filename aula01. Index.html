@@ -1,0 +1,81 @@
+<!-- ex1 -->
+<!-- let visto = false; -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Radar da Vida Escolar - Aula 08</title>
+</head>
+<body>
+
+    <!-- ex5 -->
+    <div class="cartao"> 
+        <h2>Bebedouro do corredor</h2> 
+        <p>O bebedouro vaza desde março e forma poça no piso.</p> 
+        <p>Apoios: <span class="contagem">0</span></p> 
+        <button class="apoiar">Apoiar</button> 
+    </div>
+
+    <div class="cartao"> 
+        <h2>Ventilador da sala 3</h2> 
+        <p>Faz um barulho muito alto e quase não venta.</p> 
+        <p>Apoios: <span class="contagem">0</span></p> 
+        <button class="apoiar">Apoiar</button> 
+    </div>
+
+    <div class="cartao"> 
+        <h2>Armário da biblioteca</h2> 
+        <p>A porta do armário 4 está emperrada e não fecha direito.</p> 
+        <p>Apoios: <span class="contagem">0</span></p> 
+        <button class="apoiar">Apoiar</button> 
+    </div>
+
+    <!-- Quarto cartão (Exercício 5) -->
+    <div class="cartao"> 
+        <h2>Lâmpada queimada na entrada</h2> 
+        <p>A entrada principal fica às escuras no período da noite.</p> 
+        <p>Apoios: <span class="contagem">0</span></p> 
+        <button class="apoiar">Apoiar</button> 
+    </div>
+
+    <script>
+    // ex2: 
+    // 5 === 5 -> true
+    // "5" === 5 -> false
+    // "5" == 5 -> true
+    // true === false -> false
+
+    // ex3: O erro ocorria porque let apoiado = false estava fora do forEach, compartilhando o estado entre todos os cartões. A correção foi mover para dentro do forEach.
+
+    // ex4:
+    // if (apoiado === false) {
+    //     botao.textContent = "Apoiado";
+    // } else {
+    //     botao.textContent = "Apoiar";
+    // }
+
+    // ex6: Para nascer apoiado, mudamos para let apoiado = true e ajustamos o HTML. Isso não serve para os outros globais pois cada um precisa do seu próprio estado.
+
+    document.querySelectorAll(".apoiar").forEach(function(botao) { 
+        let apoiado = false; 
+
+        botao.addEventListener("click", function() { 
+            let cartao = botao.parentElement; 
+            let display = cartao.querySelector(".contagem"); 
+            let valor = Number(display.textContent); 
+
+            if (apoiado === false) { 
+                display.textContent = valor + 1; 
+                botao.textContent = "Apoiado"; 
+            } else { 
+                display.textContent = valor - 1; 
+                botao.textContent = "Apoiar"; 
+            } 
+
+            apoiado = !apoiado; 
+        }); 
+    }); 
+    </script>
+</body>
+</html>
