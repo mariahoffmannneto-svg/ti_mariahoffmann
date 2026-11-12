@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Radar da Vida Escolar</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Radar da Vida Escolar</h1>
+    <p>Aponte um problema da escola e apoie os que mais te atrapalham.</p>
+  </header>
+
+  <main>
+    <div class="cartao">
+      <h2>Bebedouro do corredor</h2>
+      <p>O bebedouro vaza desde março e forma poça no piso.</p>
+      <p>Apoios: <span class="contagem">0</span></p>
+      <button class="apoiar">Apoiar</button>
+    </div>
+
+    <div class="cartao">
+      <h2>Fila da cantina</h2>
+      <p>A fila dobra o corredor no intervalo e não dá tempo de lanchar.</p>
+      <p>Apoios: <span class="contagem">0</span></p>
+      <button class="apoiar">Apoiar</button>
+    </div>
+
+    <div class="cartao">
+      <h2>Tomadas da biblioteca</h2>
+      <p>Metade das tomadas não funciona para carregar os notebooks.</p>
+      <p>Apoios: <span class="contagem">0</span></p>
+      <button class="apoiar">Apoiar</button>
+    </div>
+
+    <div class="cartao">
+      <h2>Ventilador da sala 04</h2>
+      <p>O ventilador do fundo está quebrado e faz barulho alto quando ligado.</p>
+      <p>Apoios: <span class="contagem">0</span></p>
+      <button class="apoiar">Apoiar</button>
+    </div>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
