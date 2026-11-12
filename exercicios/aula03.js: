@@ -1,0 +1,36 @@
+// ex1
+// A página perde todo o visual. No navegador, tudo aparece em preto e branco,
+// com fontes padrão, sem cores ou espaçamentos e alinhado à esquerda (embora os botões continuem funcionando).
+
+
+// ex2
+// Não é desnecessário, é uma boa prática. Como o script estava no fim do body, o HTML já tinha sido lido
+// antes dele rodar. A diferença é que sem "defer" o navegador pausa a leitura para rodar o script na hora;
+// com "defer", ele garante que o script só execute depois que toda a página terminar de carregar.
+
+
+// ex3
+/*
+:root {
+  --cor-urgencia: #C00000;
+}
+.cartao-urgente {
+  border: 3px solid var(--cor-urgencia);
+}
+.titulo-urgente {
+  color: var(--cor-urgencia);
+}
+*/
+
+
+// ex4
+// Separei o código em index.html, styles.css e script.js. Não deu erro porque conferi no navegador
+// se o visual azul carregou (confirmando o link do CSS) e cliquei nos botões para testar se a contagem
+// e o texto mudavam normalmente (confirmando o script.js).
+
+
+// ex5
+// --cor-primaria: guarda a cor principal usada no cabeçalho, títulos e botões.
+// --cor-foco: guarda a cor de destaque do contorno de acessibilidade (Tab).
+// --espaco-padrao: guarda o espaçamento interno (padding) dos cartões.
+// --borda-arredondada: guarda o tamanho do arredondamento dos cantos dos cartões.
