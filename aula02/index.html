@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Radar da Vida Escolar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #1F4E79;
+      color: #FFFFFF;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+    .cartao {
+      background-color: #FFFFFF;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .cartao h2 {
+      color: #1F4E79;
+      margin-top: 0;
+    }
+    .apoiar {
+      background-color: #1F4E79;
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .apoiar:hover {
+      background-color: #163a5c;
+    }
+    .apoiar:focus {
+      outline: 3px solid #C00000;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Radar da Vida Escolar</h1>
+    <p>Aponte um problema da escola e apoie os que mais te atrapalham.</p>
+  </header>
+
+  <main>
+    <div class="cartao">
+      <h2>Bebedouro do corredor</h2>
+      <p>O bebedouro vaza desde março e forma poça no piso.</p>
+      <p>Apoios: <span class="contagem">0</span></p>
+      <button class="apoiar">Apoiar</button>
+    </div>
+
+    <div class="cartao">
+      <h2>Fila da cantina</h2>
+      <p>A fila dobra o corredor no intervalo e não dá tempo de lanchar.</p>
+      <p>Apoios: <span class="contagem">0</span></p>
+      <button class="apoiar">Apoiar</button>
+    </div>
+
+    <div class="cartao">
+      <h2>Tomadas da biblioteca</h2>
+      <p>Metade das tomadas não funciona para carregar os notebooks.</p>
+      <p>Apoios: <span class="contagem">0</span></p>
+      <button class="apoiar">Apoiar</button>
+    </div>
+
+    <div class="cartao">
+      <h2>Ventilador da sala 04</h2>
+      <p>O ventilador do fundo está quebrado e faz barulho alto quando ligado.</p>
+      <p>Apoios: <span class="contagem">0</span></p>
+      <button class="apoiar">Apoiar</button>
+    </div>
+  </main>
+
+  <script>
+    document.querySelectorAll(".apoiar").forEach(function(botao) {
+      let apoiado = false;
+
+      botao.addEventListener("click", function() {
+        let cartao = botao.parentElement;
+        let display = cartao.querySelector(".contagem");
+        let valor = Number(display.textContent);
+
+        if (apoiado === false) {
+          display.textContent = valor + 1;
+          botao.textContent = "Apoiado";
+        } else {
+          display.textContent = valor - 1;
+          botao.textContent = "Apoiar";
+        }
+
+        apoiado = !apoiado;
+      });
+    });
+  </script>
+</body>
+</html>
